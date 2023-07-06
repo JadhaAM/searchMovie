@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+}
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+    background-color: black;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.box {
+    padding: 10px;
+    width: 25%;
+    flex-basis: 25%;
+    height: 400px;
+    cursor: pointer;
+    border-radius: 5px;
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+}
+ #movie-box{
+    display: flex;
+    flex-wrap: wrap;
+ }
+
+.box img {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 4px 5px rgb(0 0 0 / 20%);
+}
+
+.box .overlay {
+    width: 90%;
+    max-height: 100%;
+    min-height: 70%;
+    margin: auto;
+    position: absolute;
+    bottom: -100%;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 10px 10px 0px 0px;
+    left: 15px;
+    transition: 0.5s;
+    background-color: white;
+}
+
+.box span {
+    color: orange;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box:hover .overlay {
+    bottom: 0%;
+}
+
+.overlay h2 {
+    margin-bottom: 10px;
+}
+
+#search {
+    width: 500px;
+    padding: 5px 30px;
+    background-color: rgba(52, 73, 94, 0.7);
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 1px white;
+    color: White;
+    margin-top: 10px;
+    font-size: 30px;
+    border-radius: 25px;
+    transition: 1s;
+    margin-bottom: 15px;
+}
+
+#search:focus {
+    background-color: white;
+    color: black;
+}
+
+#loader {
+    background-image: #000 url("./image-missing.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 15%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+
+#contener {
+    width: 100%;
+    border: 2px solid #000;
+    background-color: green;
+    text-align: center;
+    color: white;
+}
+
+/* this for the contener sapn propertic */
+
+.contener {
+    display: flex;
+    justify-content: center;
+}
+
+#span {
+    width: 100vw;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
+/* css for the full movie pic */
+
+.full-img {
+
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.full-img img {
+
+    width: 90%;
+    max-width: 500px;
+}
+
+.full-img span {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+/*  this for the resposive */
+@media screen and (min-width:590px) {
+    .box {
+        padding: 10px;
+        width: 20%;
+        flex-basis: 20%;
+        height: 300px;
+       
+    }
+    
+}
+@media screen and (max-width:375px) {
+    .box {
+        flex-basis: 25%;
+        height: 200px;
+       
+    }
+    
+}
+@media screen and (max-width:400px) {
+    .box {
+        flex-basis: 25%;
+        height: 250px;
+       
+    }
+    
+}

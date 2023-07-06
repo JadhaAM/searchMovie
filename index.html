@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> movie app</title>
+    <link rel="stylesheet" href="custom.css">
+    <style>
+        /* css for the  user online check */
+        .status {
+            width: 100%;
+            padding: 10px;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // JavaScript code user status check
+        function checkUserStatus() {
+            var statusDiv = document.createElement("div");
+            statusDiv.className = "status";
+            window.addEventListener('online', checkUserStatus);
+            if (window.navigator.onLine) {
+                statusDiv.textContent = "Back Online";
+                statusDiv.style.backgroundColor = "rgb(126, 206, 206)";
+            } else {
+                statusDiv.textContent = "No Connection";
+                statusDiv.style.backgroundColor = "red";
+            }
+
+            document.body.appendChild(statusDiv);
+
+            setTimeout(function () {
+                statusDiv.style.display = "none";
+            }, 1200);
+        }
+
+        checkUserStatus();
+
+    </script>
+    <div class="full-img" id="fullImgBox">
+        <img src="" alt="" id="fullImg">
+
+        <span onclick="closeFullImg()">X</span>
+    </div>
+    <div class="main">
+
+
+
+        <div class="row">
+            <input type="search" id="search" autofocus autocomplete="off" placeholder="Search here..." />
+        </div>
+
+        <div class="row" id="movie-box">
+
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
